@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spil – Detaljer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/detail.css">
+</head>
+<body>
+
+  <!-- Topbar (samme stil som start.html) -->
+  <header class="appbar" aria-label="Topnavigation">
+    <button class="icon-btn" id="backBtn" aria-label="Tilbage">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 19L8 12L15 5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div class="appbar__right">
+      <button class="icon-btn" id="btnSearch" aria-label="Søg">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2"/><path d="M20 20L17 17" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <button class="icon-btn" id="btnFavs" aria-label="Favoritter">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-4-8.5-7.5C1.6 10 3.2 6 7 6c2.1 0 3.3 1.2 5 3 1.7-1.8 2.9-3 5-3 3.8 0 5.4 4 3.5 7.5S12 21 12 21z" stroke="#111" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="game-card">
+      <h1 id="gameTitle" class="page-title">Spil</h1>
+
+      <div class="media">
+        <img id="gameImage" class="game-img" alt="">
+      </div>
+
+      <p id="gameDescription" class="desc">Indlæser …</p>
+      <button id="toggleDesc" class="toggle" hidden>Læs mere</button>
+
+      <!-- 5 facts -->
+      <ul id="factsRow" class="facts" aria-label="Spilfakta"></ul>
+
+      <section class="rules">
+        <h2>Regler / kort forklaring</h2>
+        <div id="gameRules" class="rules-body">—</div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Smal tabbar nederst -->
+  <nav class="tabbar" aria-label="Primær navigation">
+    <ul class="tabrow" role="list">
+      <li><a class="tab" href="#"><img src="assets/images/profil.png" alt=""><span>Profil</span></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/book.png" alt=""><span>Book</span></a></li>
+      <li><a class="tab tab--brand" href="start.html"><img src="assets/images/logoloading.png" alt="Logo"></a></li>
+      <li><a class="tab" href="search.html"><img src="assets/images/udforsk.png" alt=""><span>Udforsk</span></a></li>
+  <li><a class="tab" href="oversigt.html"><img src="assets/images/spiloversigt.png" alt=""><span>Spiloversigt</span></a></li>
+    </ul>
+  </nav>
+
+  <script src="js/detail.js" defer></script>
+</body>
+</html>

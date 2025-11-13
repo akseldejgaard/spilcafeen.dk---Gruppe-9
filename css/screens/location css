@@ -1,0 +1,13 @@
+#location{ min-height:100dvh; display:block; }
+.page{ max-width:393px; margin:0 auto; padding: 40px 24px calc(120px + var(--space-20)); }
+.page__header{ text-align:center; position:relative; }
+
+
+/* Top-højre ikoner som i mockup */
+.toolbar{ position:absolute; right:0; top:-6px; display:flex; gap:16px; }
+.icon-btn{ background:transparent; border:0; padding:8px; }
+.icon-btn img{ width:22px; height:22px; }
+
+
+.title{ font-family: var(--font-display); font-weight:400; text-transform:uppercase; letter-spacing:.5px; font-size: 42px; margin: 12px 0 10px; line-height: var(--lh-tight); }
+.subtitle{ color:var(--color-muted); margin:0 0 24px; font-weight:600; font-size: 16px; }

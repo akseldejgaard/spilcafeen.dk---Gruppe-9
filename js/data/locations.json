@@ -1,0 +1,7 @@
+[
+{ "id": "aarhus-fredensgade", "label": "Aarhus C – Fredensgade" },
+{ "id": "aarhus-vestergade", "label": "Aarhus C – Vestergade" },
+{ "id": "aalborg", "label": "Aalborg" },
+{ "id": "odense", "label": "Odense" },
+{ "id": "kolding", "label": "Kolding" }
+]

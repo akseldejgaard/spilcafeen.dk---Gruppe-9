@@ -1,0 +1,371 @@
+ /* Variabler (kan også defineres i index.html) */
+:root{
+  --bg: #E9E0E0;
+  --surface: #ECECEC;
+  --text: #0B0B0B;
+  --muted: #6A6A6A;
+  --shadow: 0 14px 36px rgba(0,0,0,.16);
+  --font-sans: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-display: "Afacad", system-ui, -apple-system, sans-serif;
+  --radius-pill: 28px;
+  --page-max: 393px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-sans);
+  min-width:393px;
+  min-height:100dvh;
+}
+
+/* HEADER */
+.page-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px;
+  text-align:center;
+  font-family:var(--font-display);
+}
+
+.page-header h1 {
+  flex:1;
+  text-align:center;
+  font-weight:700;
+  font-size:20px;
+  margin:0;
+}
+
+.page-header img { width:24px; height:24px; }
+
+.back-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.header-icons {
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+#searchInput {
+  display: none; /* Skjult som standard */
+  font-family: var(--font-display);
+  font-size: 14px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+  width: 150px;
+  transition: all 0.3s ease;
+}
+
+/* Når den vises */
+#searchInput.show {
+  display: inline-block;
+}
+
+
+.search-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-btn img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.favorit-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor:pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorit-btn img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: #F4EDED;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  padding: 8px 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #E0D6D6;
+  transform: translateY(-1px);
+}
+.filter-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  flex-wrap: wrap;
+}
+
+.option-btn {
+  background: #F4EDED;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  padding: 8px 18px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover,
+.option-btn.active {
+  background: #E0D6D6;
+  transform: translateY(-1px);
+}
+
+/* TABBAR (hvis du vil flytte herfra index.html senere) */
+.tabbar{
+  position:fixed; left:0; right:0; bottom:0; z-index:10;
+  background: linear-gradient(to top, #FFFFFF 0%, #ECECEC 100%);
+  box-shadow:0 -14px 36px rgba(0,0,0,.16);
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+}
+.tabrow{
+  max-width:780px;margin:0 auto;list-style:none;padding:0;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  gap:8px;align-items:end;
+}
+.tab{display:flex;flex-direction:column;align-items:center;gap:6px;color:inherit;font-weight:600;font-size:13px;opacity:.9}
+.tab img{width:28px;height:28px;object-fit:contain}
+.tab--brand{position:relative; overflow:visible;}
+.tab--brand img{
+  position:absolute; left:50%; bottom:-35px;
+  transform:translateX(-50%) translateY(-25%);
+  width:100px; height:100px;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.2));
+  z-index:3;
+}
+
+/* SPIL GRID */
+.game-grid {
+  display:grid;
+  /* slightly wider two-column layout so cards have room for meta items */
+  grid-template-columns:repeat(2,minmax(200px,1fr));
+  gap:14px;
+  padding:14px;
+  max-width:480px;
+  margin:0 auto 100px;
+  justify-items:stretch; /* ensure even column distribution */
+  align-items:start; /* align items to top so cards don't overlap */
+  grid-auto-rows: auto; /* ensure rows size to content */
+  grid-auto-flow: row; /* ensure normal row flow */
+}
+
+/* KORT */
+.game-card {
+  position:relative;
+  background:var(--surface);
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  padding:12px;
+  width:100%; /* make cards fill their grid column evenly */
+  text-align:center;
+  overflow:visible;
+  display:flex;
+  flex-direction:column;
+  min-width: 0; /* allow cards to shrink to fit the column */
+}
+
+.game-card img {
+  width:100%;
+  height:150px;
+  border-radius:12px;
+  margin-bottom:8px;
+  object-fit:cover;
+  display:block;
+}
+
+/* Ensure meta (players/time/shelf) sits in one row and doesn't wrap */
+.meta{ display:flex; align-items:center; justify-content:space-between; gap:6px; margin-top:8px; color:var(--text); flex-wrap:nowrap }
+.meta-item{ display:flex; align-items:center; gap:6px; flex:0 1 auto; min-width:0; justify-content:flex-start }
+.meta-item img{ width:16px; height:16px; object-fit:contain }
+.meta-item small{ display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight:700; color:var(--text); font-size:12px; }
+
+.game-card h2 {
+  font-family:var(--font-display);
+  font-size:16px;
+  margin:8px 0 4px;
+}
+
+/* IKON + TEKST layout
+   - ikoner på én linje
+   - tekst direkte under hver ikon
+*/
+.game-info {
+  display:flex;
+  justify-content:space-between; /* fordeler de 3 items jævnt */
+  align-items:flex-start;
+  gap:8px;
+  margin-top:8px;
+  padding:0 6px;
+}
+
+.info-item{
+  width:33%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.info-item img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  opacity:0.95;
+}
+
+.info-item .label {
+  font-size:12px;
+  color:var(--muted);
+}
+
+.info-item span{
+  display:block;
+  margin-top:0;
+  font-weight:600;
+  color:var(--text);
+  font-size:13px;
+}
+
+/* Ribbon */
+.ribbon {
+  position:absolute;
+  top:10px;
+  left:-8px;
+  background:#C33;
+  color:white;
+  font-weight:700;
+  font-size:12px;
+  padding:4px 8px;
+  border-radius:4px;
+  transform:rotate(-15deg);
+}
+
+/* Responsivt */
+@media (max-width:420px){
+  .game-card img{height:120px}
+  .info-item img{width:24px;height:24px}
+  .game-grid{gap:12px;padding:12px}
+}
+
+@media (min-width:600px){
+  .game-grid{grid-template-columns:repeat(3,1fr); max-width:900px}
+}
+
+/* Sørger for at indhold ikke bliver dækket af tabbaren */
+.screen {
+  /* giver ekstra plads i bunden: safe-area + tabbar-højde */
+  padding-bottom: calc(env(safe-area-inset-bottom) + 96px);
+}
+
+/* Gør det muligt at animere tabbaren når vi løfter den lidt */
+.tabbar {
+  transition: transform .28s ease;
+}
+
+/* Klasse der løfter tabbaren en smule nedad (ud af vejen) */
+.tabbar--lift {
+  transform: translateY(28px);
+}
+
+/* FAVORITKNAP PÅ KORT */
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0.9;
+}
+
+.fav-btn img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.fav-btn:hover {
+  transform: scale(1.1);
+opacity: 1;
+}
+
+.fav-btn.active img {
+  filter: invert(29%) sepia(96%) saturate(7485%) hue-rotate(355deg) brightness(95%) contrast(118%);
+  /* Gør billedet rødt */
+  transform: scale(1.2);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.fav-btn.active {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* Ensure heart button (site .heart-btn) sits above the image and is clickable */
+.heart-btn{ z-index:6 }

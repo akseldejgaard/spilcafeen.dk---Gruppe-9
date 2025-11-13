@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alle spil Vestergade</title>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/oversigt.css">
+  <script defer src="js/oversigt.js"></script>
+
+  <!-- Font: Afacad -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TABBAR -->
+  <nav class="tabbar" aria-label="Primær navigation">
+    <ul class="tabrow" role="list">
+      <li><a class="tab" href="#"><img src="assets/images/profil.png" alt=""><span>Profil</span></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/book.png" alt=""><span>Book</span></a></li>
+      <li><a class="tab tab--brand" href="#"><img src="assets/images/logoloading.png" alt="Logo"></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/udforsk.png" alt=""><span>Udforsk</span></a></li>
+  <li><a class="tab" href="oversigt.html"><img src="assets/images/spiloversigt.png" alt=""><span>Spiloversigt</span></a></li>
+    </ul>
+  </nav>
+
+  <main class="screen" id="games">
+    <!-- Topbar (consistent with other pages) -->
+    <header class="appbar" aria-label="Topnavigation">
+      <button class="icon-btn" id="btnBack" type="button" aria-label="Tilbage">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M15 19L8 12L15 5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="9" y1="12" x2="20" y2="12" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <h1>FIND DIT SPIL PÅ VESTERGADE!</h1>
+
+      <div class="appbar__right">
+        <button class="icon-btn" id="btnSearch" type="button" aria-label="Søg">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2"/><path d="M20 20L17 17" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <input id="searchInput" class="appbar-search" type="search" placeholder="Søg spil…" aria-label="Søg spil" style="display:none;">
+        <a class="icon-btn" id="btnFavs" href="favorites.html" aria-label="Favoritter">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-6.5-4-8.5-7.5C1.6 10 3.2 6 7 6c2.1 0 3.3 1.2 5 3 1.7-1.8 2.9-3 5-3 3.8 0 5.4 4 3.5 7.5S12 21 12 21z" stroke="#111" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- FILTER -->
+    <section class="filter-bar">
+      <button class="filter-btn" data-filter="varighed">Varighed</button>
+      <button class="filter-btn" data-filter="antal">Antal</button>
+      <button class="filter-btn" data-filter="genre">Genre</button>
+      <button class="filter-btn" data-filter="sværhedsgrad">Sværhedsgrad</button>
+    </section>
+
+    <section class="filter-options" id="varighed-options" style="display: none;">
+      <button class="option-btn" data-varighed="0-1 time">0–1 time</button>
+      <button class="option-btn" data-varighed="1-2 timer">1–2 timer</button>
+      <button class="option-btn" data-varighed="2-3 timer">2–3 timer</button>
+      <button class="option-btn" data-varighed="alle">Vis alle</button>
+    </section>
+
+    <section class="filter-options" id="antal-options" style="display: none;">
+  <button class="option-btn" data-antal="2-4">2–4</button>
+  <button class="option-btn" data-antal="4-8">4–8</button>
+  <button class="option-btn" data-antal="8+">8+</button>
+  <button class="option-btn" data-antal="alle">Vis alle</button>
+</section>
+
+<section class="filter-options" id="genre-options" style="display: none;">
+  <button class="option-btn" data-genre="strategi">Strategi</button>
+  <button class="option-btn" data-genre="familie">Familie</button>
+  <button class="option-btn" data-genre="rafle">Rafle</button>
+  <button class="option-btn" data-genre="alle">Vis alle</button>
+</section>
+
+<!-- `Alder` filter removed per request -->
+
+<section class="filter-options" id="svaerhedsgrad-options" style="display: none;">
+  <button class="option-btn" data-svaerhedsgrad="let">Let</button>
+  <button class="option-btn" data-svaerhedsgrad="mellem">Mellem</button>
+  <button class="option-btn" data-svaerhedsgrad="svær">Svær</button>
+  <button class="option-btn" data-svaerhedsgrad="alle">Vis alle</button>
+</section>
+
+
+
+    <!-- SPIL KORT -->
+    <section class="game-grid">
+
+      <article class="game-card" data-varighed="1-2 timer" data-antal="4-8" data-genre="familie" data-alder="8-15 år" data-sværhedsgrad="let">
+        <img src="assets/images/Matador.png" alt="Matador">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Matador</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="2-4" data-genre="rafle" data-alder="4-10 år" data-sværhedsgrad="let">
+        <img src="assets/images/Yatzy.png" alt="Yatzy">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Yatzy</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="8+" data-genre="familie" data-alder="4-10 år" data-sværhedsgrad="let">
+        <img src="assets/images/Sequence.png" alt="Sequence">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Sequence</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="2-4" data-genre="Strategi" data-alder="8-15 år" data-sværhedsgrad="let">
+        <img src="assets/images/Azul.png" alt="Azul">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Azul</h2>
+      </article>
+
+      <article class="game-card" data-varighed="1-2 timer" data-antal="2-4" data-genre="Strategi" data-alder="8-15 år" data-sværhedsgrad="mellem">
+        <img src="assets/images/Catan'.png" alt="Catan">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Catan</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="2-4" data-genre="familie" data-alder="8-15 år" data-sværhedsgrad="mellem">
+        <img src="assets/images/Scrabble.png" alt="Scrabble">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Scrabble</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="2-4" data-genre="familie" data-alder="8-15 år" data-sværhedsgrad="let">
+        <img src="assets/images/Exploding Kittens.png" alt="Exploding Kittens">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Exploding Kittens</h2>
+      </article>
+
+      <article class="game-card" data-varighed="1-2 timer" data-antal="2-4" data-genre="familie" data-alder="15+ år" data-sværhedsgrad="mellem">
+        <img src="assets/images/bezzerwizzer.png" alt="Bezzerwizzer">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Bezzerwizzer</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="2-6" data-genre="strategi" data-alder="15+ år" data-sværhedsgrad="let">
+        <img src="assets/images/DetDårligeSelskab.png" alt="Det Dårlige Selskab">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Det Dårlige Selskab</h2>
+      </article>
+
+      <article class="game-card" data-varighed="0-1 time" data-antal="4-8" data-genre="strategi" data-alder="15+ år" data-sværhedsgrad="mellem">
+        <img src="assets/images/Secret Hitler.png" alt="Secret Hitler">
+        <button class="fav-btn" aria-label="Tilføj til favoritter">
+    <img src="assets/images/favoritTER.png" alt="Favorit">
+  </button>
+        <h2>Secret Hitler</h2>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>

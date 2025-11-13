@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Søg – Spilcaféen</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <main>
+    <h1>Søg spil</h1>
+    <form class="searchbox">
+      <input type="search" id="q" placeholder="Søg efter titel, genre, sværhedsgrad …" />
+      <button type="submit">Søg</button>
+    </form>
+    <div id="results" class="results"></div>
+  </main>
+
+  <nav class="tabbar" aria-label="Primær navigation">
+    <ul class="tabrow" role="list">
+      <li><a class="tab" href="#"><img src="assets/images/profil.png" alt=""><span>Profil</span></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/book.png" alt=""><span>Book</span></a></li>
+      <li><a class="tab tab--brand" href="start.html"><img src="assets/images/logoloading.png" alt="Logo"></a></li>
+      <li><a class="tab" href="search.html"><img src="assets/images/udforsk.png" alt=""><span>Udforsk</span></a></li>
+  <li><a class="tab" href="oversigt.html"><img src="assets/images/spiloversigt.png" alt=""><span>Spiloversigt</span></a></li>
+    </ul>
+  </nav>
+
+<script src="js/search.js" defer></script>
+</body>
+</html>

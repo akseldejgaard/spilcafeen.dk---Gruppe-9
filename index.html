@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spilcaféen</title>
+
+  <!-- Font: Afacad -->
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+  <!-- SPLASH -->
+  <section id="splash" class="screen" aria-labelledby="splash-title" role="region">
+    <div class="splash-inner">
+      <!-- Simple loading image (restores previous PNG loading screen) -->
+      <img src="assets/images/Loadingscreen.png" alt="Spilcaféen" class="splash-logo" />
+    </div>
+  </section>
+
+  <!-- LOKATION -->
+  <main id="location" class="screen is-hidden" aria-hidden="true">
+    <article class="page" aria-labelledby="welcome-title">
+      <header class="page__header">
+        <h2 id="welcome-title" class="title">Velkommen</h2>
+        <p class="subtitle">Vælg din lokation nedenfor</p>
+      </header>
+
+      <section aria-label="Tilgængelige lokationer">
+        <ul class="btn-list" role="list">
+          <!-- VESTERGADE → STARTSIDE -->
+          <li><a class="btn" href="start.html">Aarhus C – Vestergade</a></li>
+
+          <!-- De andre: inaktive indtil deres sider findes -->
+          <li><button class="btn" type="button">Aarhus C – Fredensgade</button></li>
+          <li><button class="btn" type="button">Aalborg</button></li>
+          <li><button class="btn" type="button">Odense</button></li>
+          <li><button class="btn" type="button">Kolding</button></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- TABBAR -->
+  <nav class="tabbar" aria-label="Primær navigation">
+    <ul class="tabrow" role="list">
+      <li><a class="tab" href="#"><img src="assets/images/profil.png" alt=""><span>Profil</span></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/book.png" alt=""><span>Book</span></a></li>
+      <li><a class="tab tab--brand" href="#"><img src="assets/images/logoloading.png" alt="Logo"></a></li>
+      <li><a class="tab" href="#"><img src="assets/images/udforsk.png" alt=""><span>Udforsk</span></a></li>
+  <li><a class="tab" href="oversigt.html"><img src="assets/images/spiloversigt.png" alt=""><span>Spiloversigt</span></a></li>
+    </ul>
+  </nav>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

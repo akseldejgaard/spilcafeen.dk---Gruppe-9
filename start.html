@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spilcaféen – Vestergade</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- Topbar -->
+<header class="appbar" aria-label="Topnavigation">
+<button class="icon-btn" id="btnBack" aria-label="Tilbage">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <!-- pilens spids -->
+    <path d="M15 19L8 12L15 5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- hale -->
+    <line x1="9" y1="12" x2="20" y2="12" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
+
+  <div class="appbar__right">
+    <button class="icon-btn" id="btnSearch" aria-label="Søg">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#111" stroke-width="2"/><path d="M20 20L17 17" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <button class="icon-btn" id="btnFavs" aria-label="Favoritter">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-4-8.5-7.5C1.6 10 3.2 6 7 6c2.1 0 3.3 1.2 5 3 1.7-1.8 2.9-3 5-3 3.8 0 5.4 4 3.5 7.5S12 21 12 21z" stroke="#111" stroke-width="2" fill="none" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+  <!-- === Øverste sektion === -->
+  <section class="first-fold" aria-labelledby="velkommen">
+    <h1 id="velkommen">VELKOMMEN TIL, LARS!</h1>
+
+    <h2 class="section-title">Månedens spil</h2>
+    <!-- (RETTELSE AF TYPO HER: fjernet ekstra "<div") -->
+    <div class="h-scroll" id="gamesRow" role="list" aria-label="Månedens spil karrusel"></div>
+
+  </section>
+
+  <!-- === Sektion 1: Hyggertid === -->
+  <section class="info-section" aria-labelledby="hygge-titel">
+    <h2 id="hygge-titel" class="section-title">Hyggetid!</h2>
+    <article class="info-card">
+      <div class="info-text">
+        <p>
+          Spilcaféen er stedet, hvor du og dine venner kan hygge jer med brætspil. 
+          Uanset om I spiller sammen eller mod hinanden, er det ren sjov og fællesskab. 
+          Vi har spillene – I har hyggen!
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="assets/images/hygge.png" alt="Hyggelig stemning i caféen">
+      </div>
+    </article>
+  </section>
+
+  <!-- === Sektion 2: Medlemsfordele === -->
+  <section class="info-section" aria-labelledby="medlem-titel">
+    <h2 id="medlem-titel" class="section-title">Medlemsfordele i November</h2>
+    <article class="info-card">
+      <div class="info-image">
+        <img src="assets/images/medlem.png" alt="Medlemsfordele">
+      </div>
+      <div class="info-text">
+        <p>
+          I november kan alle medlemmer tage en ven med ind og spille – helt gratis!<br><br>
+          Er du ikke allerede medlem?
+        </p>
+      </div>
+    </article>
+  </section>
+
+  <!-- === Sektion 3: Reserver bord === -->
+  <section class="info-section" aria-labelledby="reserver-titel">
+    <h2 id="reserver-titel" class="section-title">Reserver bord</h2>
+    <article class="info-card">
+      <div class="info-text">
+        <p>
+          Vil du være sikker på, at der står et bord klar til jer, når I kommer? 
+          Så reserver jeres plads her, og gå direkte i gang med at spille!
+        </p>
+      </div>
+      <div class="info-image">
+        <img src="assets/images/reserver.png" alt="Reserver bord i caféen">
+      </div>
+    </article>
+  </section>
+
+<!-- === Lokationer (carrousel med pile og prikker) === -->
+<section id="locations" class="loc-section" aria-labelledby="loc-title">
+  <h2 id="loc-title" class="section-title section-title--spaced">Aarhus – Fredensgade</h2>
+
+  <div class="loc-carousel">
+    <button class="loc-arrow loc-arrow--prev" type="button" aria-label="Forrige">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M15 19L8 12L15 5" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+
+    <div class="loc-viewport">
+      <ul class="loc-track" id="locTrack" role="list">
+        <!-- Slide 1 -->
+        <li class="loc-slide" role="listitem" data-title="Aarhus – Fredensgade">
+          <figure class="loc-circle">
+            <img src="assets/images/fredensgade.png" alt="Aarhus – Fredensgade">
+          </figure>
+          <a class="btn-cta loc-cta" href="fredensgade.html">Klik her!</a>
+        </li>
+
+        <!-- Slide 2 -->
+        <li class="loc-slide" role="listitem" data-title="Aarhus – Vestergade">
+          <figure class="loc-circle">
+            <img src="assets/images/vestergade.png" alt="Aarhus – Vestergade">
+          </figure>
+          <a class="btn-cta loc-cta" href="start.html">Vestergade</a>
+        </li>
+
+        <!-- Slide 3 -->
+        <li class="loc-slide" role="listitem" data-title="Aalborg">
+          <figure class="loc-circle">
+            <img src="assets/images/aalborg.png" alt="Aalborg">
+          </figure>
+          <a class="btn-cta loc-cta" href="#">Aalborg</a>
+        </li>
+
+        <!-- Slide 4 -->
+        <li class="loc-slide" role="listitem" data-title="Odense">
+          <figure class="loc-circle">
+            <img src="assets/images/odense.png" alt="Odense">
+          </figure>
+          <a class="btn-cta loc-cta" href="#">Odense</a>
+        </li>
+
+        <!-- Slide 5 -->
+        <li class="loc-slide" role="listitem" data-title="Kolding">
+          <figure class="loc-circle">
+            <img src="assets/images/kolding.png" alt="Kolding">
+          </figure>
+          <a class="btn-cta loc-cta" href="#">Kolding</a>
+        </li>
+      </ul>
+    </div>
+
+    <button class="loc-arrow loc-arrow--next" type="button" aria-label="Næste">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M9 5l7 7-7 7" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="loc-dots" id="locDots" aria-label="Slideindikator" role="tablist"></div>
+</section>
+
+</main>
+
+
+<!-- Tabbar (som index) -->
+<nav class="tabbar" aria-label="Primær navigation">
+  <ul class="tabrow" role="list">
+    <li><a class="tab" href="#"><img src="assets/images/profil.png" alt=""><span>Profil</span></a></li>
+    <li><a class="tab" href="#"><img src="assets/images/book.png" alt=""><span>Book</span></a></li>
+    <li><a class="tab tab--brand" href="start.html"><img src="assets/images/logoloading.png" alt="Logo"></a></li>
+    <li><a class="tab" href="search.html"><img src="assets/images/udforsk.png" alt=""><span>Udforsk</span></a></li>
+  <li><a class="tab" href="oversigt.html"><img src="assets/images/spiloversigt.png" alt=""><span>Spiloversigt</span></a></li>
+  </ul>
+</nav>
+
+<script src="js/start.js" defer></script>
+
+</body>
+</html>
+

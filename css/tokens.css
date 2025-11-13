@@ -1,0 +1,48 @@
+:root{
+/* Farver */
+--color-bg: #E7DFDC; /* lys beige som i screenshot */
+--color-surface: #ffffff;
+--color-text: #0B0B0B;
+--color-muted: #6A6A6A;
+--color-shadow-rgb: 0 0 0;
+
+
+/* Typografi */
+--font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-display: "Luckiest Guy", system-ui, -apple-system, sans-serif;
+--fs-12: 0.75rem; /* 12px */
+--fs-14: 0.875rem; /* 14px */
+--fs-16: 1rem; /* 16px */
+--fs-18: 1.125rem; /* 18px */
+--fs-28: 1.875rem; /* 30px */
+--fs-40: 2.375rem; /* 38px – matcher VELKOMMEN! */
+--lh-tight: 1.2;
+--lh-normal: 1.5;
+
+
+/* Spacing (8-pt) */
+--space-4: 0.25rem;
+--space-8: 0.5rem;
+--space-12: 0.75rem;
+--space-16: 1rem;
+--space-20: 1.25rem;
+--space-24: 1.5rem;
+--space-32: 2rem;
+
+
+/* Radius & Shadow */
+--radius-sm: 14px;
+--radius-lg: 22px;
+--radius-pill: 999px;
+--shadow-lg: 0 8px 22px rgba(var(--color-shadow-rgb) / .22);
+}
+
+
+@media (prefers-color-scheme: dark){
+:root{
+--color-bg: #0f172a;
+--color-surface: #1f2937;
+--color-text: #f3f4f6;
+--color-muted: #94a3b8;
+}
+}
